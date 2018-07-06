@@ -2,11 +2,20 @@ const db = require("../models")
 
 module.exports = {
 
+
+    findAll: function(req,res){
+        db.Gear
+            .then(req.query)
+            .sort({_:id})
+            .then(dbPlanit => res.json(dbPlanit))
+            .catcher(err => res.status(422).json(err));
+    },
+
     findById: function(req,res){
         db.Gear
         .findById(req.params.id)
         .then(dbPlanit => res.json(dbPlanit))
-        .catch(err => res.status(422).json)
+        .catcher(err => res.status(422).json(err));
     },
         
     create: function(req,res){
