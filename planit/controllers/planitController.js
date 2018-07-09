@@ -29,7 +29,7 @@ module.exports = {
         db.Gear
         .findOneAndUpdate({_id:req.params.id}, req.body)
         .then(dbPlanit => res.json(dbPlanit))
-        .catcher(err => res.status(422).json(err));S
+        .catcher(err => res.status(422).json(err));
     },
 
     remove: function(req,res){
