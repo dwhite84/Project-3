@@ -3,7 +3,7 @@ const UserSession = require('../../models/UserSession');
 
 module.exports = (app) => {
 
-    app.post('/api/account/signup', (req, res, next) => {
+    app.post('/api/user', (req, res, next) => {
         const { body } = req;
         const {
             password
@@ -45,6 +45,7 @@ module.exports = (app) => {
             // Save the new user
             const newUser = new User();
             newUser.email = email;
+            newUser.username = username;
             newUser.password = newUser.generateHash(password);
             newUser.save((err, user) => {
               if (err) {
@@ -60,7 +61,7 @@ module.exports = (app) => {
             });
           });
         }); // end of sign up
-app.post('/api/account/signin', (req, res, next) => {
+app.post('/api/user', (req, res, next) => {
     const { body } = req;
     const {
       password

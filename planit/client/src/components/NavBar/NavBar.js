@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Button from '../Button';
 import PlanItLogo from '../../img/PlanItLogo.png';
+import axios from 'axios';
+
 // Router- Link
 
 const Nav = styled.ul`
@@ -39,8 +43,31 @@ const LinkItem = styled.a`
 
 
 class NavBar extends Component {
-   
+    constructor() {
+        super()
+        this.logout = this.logout.bind(this)
+    }
+
+    logout(event) {
+        event.preventDefault()
+        console.log('logging out')
+        axios.post('/user/logout').then(response => {
+          console.log(response.data)
+          if (response.status === 200) {
+            this.props.updateUser({
+              loggedIn: false,
+              username: null
+            })
+          }
+        }).catch(error => {
+            console.log('Logout error')
+        })
+      }
+
    render () {
+    const loggedIn = this.props.loggedIn;
+    console.log('navbar render, props: ')
+    console.log(this.props);
     return (
             <header>
                 <Nav>
@@ -53,17 +80,26 @@ class NavBar extends Component {
 
                     <NavbarButton>
                         <Button>
-                        <LinkItem href='/sign-up'>Signup</LinkItem>
+                        <LinkItem href='/signup'>Signup</LinkItem>
                         </Button>
                     </NavbarButton>
+                    {loggedIn ? (
+                            <NavbarButton>
+                                <LinkItem href=""  onClick={this.logout}>
+                                <span className="text-secondary">logout</span></LinkItem>
 
-                    {/* <NavbarItem>
-                        <LinkItem href='/login'>Login</LinkItem>
-                    </NavbarItem>
-                    
-                    <NavbarItem>
-                        <LinkItem href='/'>Home</LinkItem>
-                    </NavbarItem> */}
+                            </NavbarButton>
+                        ) : (
+                                <NavbarButton className="navbar-section">
+                                    <LinkItem href="/login" className="btn">
+                                        <span className="text-secondary">login </span>
+				                    </LinkItem>
+                                    <LinkItem href="/signup" className="btn btn-link">
+                                        <span className="text-secondary">sign up </span>
+				                    </LinkItem>
+                                </NavbarButton>
+                            )}
+
                 </Nav>
             </header>
         );

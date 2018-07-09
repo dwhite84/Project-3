@@ -1,13 +1,13 @@
-var mongoose = require('mongoose');
-var bcrypt = require('bcrypt');
+const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs');
 
 var Schema = mongoose.Schema;
 var UserSchema = new mongoose.Schema({
   email: { 
-    type: String, unique: true, required: true, trim: true
+    type: String, match: [/.+@.+\..+/, "Not a valid email"]
   },
   username: {
-     type: String, match: [/.+@.+\..+/, "Not a valid email"]
+    type: String, unique: true, required: true, trim: true
     },
   password: {
      type: String, required: true 

@@ -41,7 +41,7 @@ class HomePage extends Component {
     render () {
 
         return (
-            <Fragment>
+            <div className='container clearfix'>
                 <div className='InfoPanel' >
                     <TripImgDiv>
                         <TripImg src={defaultImages.array[Math.ceil(Math.random() * defaultImages.array.length)]} alt='Plan image' />
@@ -70,7 +70,7 @@ class HomePage extends Component {
                         <Checklists />
                     </div>
                 </div>
-            </Fragment>
+            </div>
         );
     }
 }
