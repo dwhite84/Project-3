@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 app.use(router);
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/planitdb");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/planitdb");
 
 // Start the API server
 app.listen(PORT, function() {

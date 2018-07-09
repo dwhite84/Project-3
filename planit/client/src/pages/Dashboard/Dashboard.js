@@ -1,44 +1,34 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 import './Dashboard.css';
-import profile_img from '../../img/profile_img.jpg';
-import placeholder from '../../img/placeholder_200x200.png';
+import Button from '../../components/Button';
+import PlanCard from '../../components/PlanCard/PlanCard';
+import ProfileSnippet from '../../components/ProfileSnippet/ProfileSnippet';
+
+
+const CreateButton = Button.extend`
+    margin-top: 2em;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+    margin-bottom: 2em;
+    width: 85%;
+`;
 
 class HomePage extends Component {
 
     render () {
         return (
-            <div className='container'>
+            <div className='container clearfix'>
                 <div className='leftPanel'>
-                    <div className='profileInfo'>
-                        <img className='profileImg' src={profile_img} alt='Profile' />
-                        <p>Walker Radez</p>
-                        <p>walkerradez@gmail.com</p>
-                    </div>
-                    <div className='add'>
-                        <button>Add a plan</button>
+                    <ProfileSnippet />
+                    <div>
+                        <CreateButton>
+                            Create a new plan
+                        </CreateButton>
                     </div>
                 </div>
-                <div className='cardPanel'> 
-                    <div className='card' >
-                        <img src={placeholder} alt='Plan Card' />
-                        <p>Title: </p>
-                        <p>Dates: </p>
-                    </div>
-                    <div className='card' >
-                        <img src={placeholder} alt='Plan Card' />
-                        <p>Title: </p>
-                        <p>Dates: </p>
-                    </div>
-                    <div className='card' >
-                        <img src={placeholder} alt='Plan Card' />
-                        <p>Title: </p>
-                        <p>Dates: </p>
-                    </div>
-                    <div className='card' >
-                        <img src={placeholder} alt='Plan Card' />
-                        <p>Title: </p>
-                        <p>Dates: </p>
-                    </div>
+                <div className='cardPanel'>
+                    <PlanCard />
                 </div>
             </div>
         );
