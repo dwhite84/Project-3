@@ -7,5 +7,4 @@ module.exports = {
     Gear: require('./Gear'),
     Logistics: require('./Logistics'),
     User: require('./User'),
-
 }
