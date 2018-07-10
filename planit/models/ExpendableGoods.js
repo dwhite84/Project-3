@@ -22,8 +22,20 @@ const ExpendableGoodsSchema = new Schema({
   },
   quantity_actual: {
     type: Number
+  },
+  date: {
+    type: Date,
+    default: Date.now
+  },
+  user_id: {
+    type: Schema.Types.ObjectId,
+    ref: 'User'
+  },
+  Admin_id: {
+    type: Schema.Types.ObjectId,
+    ref: 'Admin'
   }
-  //Admin and user connecting
+  
 });
 
 // Create the Headline model using the headlineSchema
