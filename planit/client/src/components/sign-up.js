@@ -1,5 +1,26 @@
-import React, { Component } from 'react'
-import axios from 'axios'
+import React, { Component } from 'react';
+import axios from 'axios';
+import styled from 'styled-components';
+
+const PageDiv = styled.div`
+	width: 100%;
+	height: 600px;
+`;
+
+const Header = styled.h4`
+	font-family: 'Work Sans', sans-serif;
+	text-align: center;
+	font-size: 1.5rem;
+`;
+
+const FormDiv = styled.div`
+	width: 20%;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 2em;
+
+`;
 
 class Signup extends Component {
 	constructor() {
@@ -50,8 +71,9 @@ class Signup extends Component {
 
 render() {
 	return (
-		<div className="SignupForm">
-			<h4>Sign up</h4>
+		<PageDiv className="SignupForm">
+			<Header>Sign up</Header>
+			<FormDiv>
 			<form className="form-horizontal">
 			<div className="form-group">
 					<div className="col-1 col-ml-auto">
@@ -107,7 +129,8 @@ render() {
 					>Sign up</button>
 				</div>
 			</form>
-		</div>
+			</FormDiv>
+		</PageDiv>
 
 	)
 }

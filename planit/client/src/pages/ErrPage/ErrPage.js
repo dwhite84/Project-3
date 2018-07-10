@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './ErrPage.css';
-import Emoji from '../../img/errPage.png';
+// import Emoji from '../../img/errPage.png';
 import Logo from '../../img/PlanItLogo.png';
 
 class ErrPage extends Component {

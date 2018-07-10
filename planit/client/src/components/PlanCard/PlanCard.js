@@ -33,50 +33,50 @@ const PlanInfo = styled.p`
 
 class PlanCard extends Component {
 
+    state = {
+        plans: [],
+        clickedPlan: null
+    }
+
+    componentDidMount = () => {
+        // this.getUserPlans();
+    }
+
+    getUserPlans = () => {
+        //API call to get all plans associated with logged in user
+        //set these to state.....somehow and render them on the page for each element found
+        // API.getPlans()
+        // .then(plans => this.setState({
+        //     plans: plans
+        // }))
+        // .catch(err => console.log(err))
+    }
+
+    loadPlan = id => {
+        // const planID = id
+
+        // API.getPlanByID(id)
+        // .then(plan => this.setState({
+        //     clickedPlan: plan
+        // }))
+        // //add another .then to load the plan page with the specific cleckedPlan planID
+        // .catch(err => console.log(err))
+    }
+
     render () {
 
         return (
             <Fragment>
-                <PlanCardDiv>
-                    <PlanImage src={placeholder} alt='Plan Card' />
-                    <PlanTitle>
-                        Title
-                    </PlanTitle>
-                    <PlanInfo>Location: </PlanInfo>
-                    <PlanInfo>Dates: </PlanInfo>
-                </PlanCardDiv>
-                <PlanCardDiv>
-                    <PlanImage src={placeholder} alt='Plan Card' />
-                    <PlanTitle>
-                        Title 
-                    </PlanTitle>
-                    <PlanInfo>Location: </PlanInfo>
-                    <PlanInfo>Dates: </PlanInfo>
-                </PlanCardDiv>
-                <PlanCardDiv>
-                    <PlanImage src={placeholder} alt='Plan Card' />
-                    <PlanTitle>
-                        Title
-                    </PlanTitle>
-                    <PlanInfo>Location: </PlanInfo>
-                    <PlanInfo>Dates: </PlanInfo>
-                </PlanCardDiv>
-                <PlanCardDiv>
-                    <PlanImage src={placeholder} alt='Plan Card' />
-                    <PlanTitle>
-                        Title 
-                    </PlanTitle>
-                    <PlanInfo>Location: </PlanInfo>
-                    <PlanInfo>Dates: </PlanInfo>
-                </PlanCardDiv>
-                <PlanCardDiv>
-                    <PlanImage src={placeholder} alt='Plan Card' />
-                    <PlanTitle>
-                        Title 
-                    </PlanTitle>
-                    <PlanInfo>Location: </PlanInfo>
-                    <PlanInfo>Dates: </PlanInfo>
-                </PlanCardDiv>
+                {this.state.plans.map( plan => (
+                    <PlanCardDiv id={plan._id} onClick={ () => this.loadPlan(plan._id)}>
+                        <PlanImage src={placeholder} alt='Plan Visual' />
+                        <PlanTitle>
+                            {plan.title}
+                        </PlanTitle>
+                        <PlanInfo>Location: {plan.location}</PlanInfo>
+                        <PlanInfo>Dates: {plan.date}</PlanInfo>
+                    </PlanCardDiv>
+                ))}
             </Fragment>
         );
     }

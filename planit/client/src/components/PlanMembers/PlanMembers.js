@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import memberImg from '../../img/50x50.png';
-import plus from '../../img/plus.png';
+import AddUser from '../AddUser/AddUser';
 
 const MemImg = styled.img`
     width: 50px;
@@ -20,7 +20,7 @@ const PlanMembers = () => {
             <MemImg src={memberImg} alt='Group member 2' />
             <MemImg src={memberImg} alt='Group member 3' />
             <MemImg src={memberImg} alt='Group member 4' />
-            <MemImg src={plus} alt='Add a member' />
+            <AddUser />
         </Fragment>
     )
 }

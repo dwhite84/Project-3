@@ -6,6 +6,10 @@ const PlanItSchema = new Schema({
     type: String,
     required: true,
   },
+  location: {
+    type: String,
+    required: true,
+  },
   members: {
     type: Array,
     ref: 'User'
