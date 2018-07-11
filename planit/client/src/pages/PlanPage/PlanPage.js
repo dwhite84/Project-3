@@ -4,7 +4,9 @@ import './PlanPage.css';
 import defaultImages from '../../img/defaultPlanImages';
 import Checklists from '../../components/Checklist/Checklist';
 import PlanMembers from '../../components/PlanMembers/PlanMembers';
-
+import location from '../../img/baseline-location_on-24px.svg';
+import dates from '../../img/baseline-date_range-24px.svg';
+import members from '../../img/outline-group-24px.svg';
 
 
 const TripImgDiv = styled.div`
@@ -28,9 +30,23 @@ const TripTitle = styled.h2`
     font-family: 'Work Sans', sans-serif;
 `;
 
-const TripInfo = styled.p`
+const TripInfoDiv = styled.div`
     margin-left: 1em;
     margin-right: 1em;
+    vertical-align: middle;
+`;
+
+const TripInfoImg = styled.img`
+    width: 24px;
+    height: 24px;
+    padding: 4px;
+    
+`;
+
+const TripInfo = styled.p`
+    display: inline-block;
+    margin-left: .25em;
+    margin-right: .25em;
     font-family: 'Roboto', sans-serif;
 `;
 
@@ -52,21 +68,24 @@ class HomePage extends Component {
                             Camping Trip Title 
                         </TripTitle>
                     </TripImgDiv>
-                    <TripInfo> 
+
+                    <TripInfoDiv> 
                     {/* needs to be replaced with dynamic location */}
-                        <i className="map-marked-alt"></i>
-                        Location: 
-                    </TripInfo>
-                    <TripInfo> 
-                        {/* needs to be replaced with dynamic dates */}
-                        <i className="calendar-alt"></i>
-                        Dates:
-                    </TripInfo>
-                    <TripInfo> 
-                        {/* needs to be replaced with dynamic plan members */}
-                        <i className="users"></i>
-                        Members: 
-                    </TripInfo>
+                        <TripInfoImg src={location} alt="location icon"/>
+                        <TripInfo>Location: </TripInfo>
+                    </TripInfoDiv>
+
+                    <TripInfoDiv> 
+                    {/* needs to be replaced with dynamic location */}
+                        <TripInfoImg src={dates} alt="location icon"/>
+                        <TripInfo>Dates: </TripInfo>
+                    </TripInfoDiv>
+
+                    <TripInfoDiv> 
+                    {/* needs to be replaced with dynamic location */}
+                        <TripInfoImg src={members} alt="location icon"/>
+                        <TripInfo>Members: </TripInfo>
+                    </TripInfoDiv>
                     <MemDiv>
                         <PlanMembers />
                     </MemDiv>

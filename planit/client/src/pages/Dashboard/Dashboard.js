@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router';
 // import styled from 'styled-components';
 import './Dashboard.css';
-// import API from '../../utils/API';
 import Button from '../../components/Button';
 import PlanCard from '../../components/PlanCard/PlanCard';
 import ProfileSnippet from '../../components/ProfileSnippet/ProfileSnippet';
@@ -30,21 +29,26 @@ class HomePage extends Component {
     }
 
     createPlan = () => {
+
         API.postPlan({
-            title: '',
-            location: '',
+            title: 'Test',
+            location: 'Test',
             members: [this.state.currentUser]
         })
         .then(res => {
             <Redirect to={'/plan/' + res._id}  />
         })
         .catch(err => console.log(err))
+
     }
 
     fetchProfileInfo = () => {
-        //get call using the currentUser to get all user information
-            //set profile info to state currentUserProfile
-        //pass through as props to the <ProfileSnippet /> component
+
+        API.getUser(this.state.currentUser)
+        .then( user => this.setState({
+            currentUserProfile: user
+        }))
+        .catch(err => console.log(err))
         
     }
 
@@ -60,7 +64,7 @@ class HomePage extends Component {
                     </div>
                 </div>
                 <div className='cardPanel'>
-                    <PlanCard />
+                    <PlanCard currentUser={this.state.currentUser}/>
                 </div>
             </div>
         );

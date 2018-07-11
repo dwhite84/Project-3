@@ -3,6 +3,8 @@ import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 import styled from 'styled-components';
 import Button from './Button';
+import username from '../img/outline-account_circle-24px.svg';
+import password from '../img/outline-visibility-24px.svg';
 
 const FormButton = Button.extend`
 	width: 300px;
@@ -127,6 +129,7 @@ class LoginForm extends Component {
                                 <label>Username</label>
                             </div> */}
                             <div>
+                                <img src={username} alt="Username Icon"/>
                                 <Input className="form-input"
                                     type="text"
                                     id="username"
@@ -142,6 +145,7 @@ class LoginForm extends Component {
                                 <label>Password: </label>
                             </div> */}
                             <div>
+                                <img src={password} alt="Password Icon"/>
                                 <Input className="form-input"
                                     placeholder="password"
                                     type="password"

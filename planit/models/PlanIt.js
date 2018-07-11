@@ -4,11 +4,11 @@ const Schema = mongoose.Schema;
 const PlanItSchema = new Schema({
   title: {
     type: String,
-    required: true,
+    
   },
   location: {
     type: String,
-    required: true,
+    
   },
   members: {
     type: Array,

@@ -17,7 +17,7 @@ postPlan: function(GearData){
 },
 
 getExpendableGoods: function(id){
-    return axios.get("/api/planit/travel/is/fun/ExpendableGoods" + id)
+    return axios.get("/api/planit/travel/is/fun/ExpendableGoods/" + id)
 },
 
 postExpendableGoods: function(ExData){
@@ -25,7 +25,7 @@ postExpendableGoods: function(ExData){
 },
 
 getGear: function(id){
-    return axios.get("/api/planit/travel/is/fun/with/Gear" + id)
+    return axios.get("/api/planit/travel/is/fun/with/Gear/" + id)
 },
 
 postGear: function(GearData){
@@ -33,7 +33,7 @@ postGear: function(GearData){
 },
 
 getLogistics: function(id){
-    return axios.get("/api/planit/travel/is/fun/with/your/Logistics" + id)
+    return axios.get("/api/planit/travel/is/fun/with/your/Logistics/" + id)
 },
 
 postLogistics: function(LogData){
@@ -41,7 +41,7 @@ postLogistics: function(LogData){
 },
 
 getMessage: function(id){
-    return axios.get("/api/planit/travel/is/fun/with/your/friends/MessageBoard" + id)
+    return axios.get("/api/planit/travel/is/fun/with/your/friends/MessageBoard/" + id)
 },
 
 postMessage: function(MessageData){
@@ -49,7 +49,7 @@ postMessage: function(MessageData){
 },
 
 getOther:function(id){
-    return axios.get("/api/planit/travel/is/fun/with/your/friends/and/Other" + id)
+    return axios.get("/api/planit/travel/is/fun/with/your/friends/and/Other/" + id)
 },
 
 postOther: function(OtherData){
@@ -57,7 +57,7 @@ postOther: function(OtherData){
 },
 
 getRec: function(id){
-    return axios.get("/api/planit/travel/is/fun/with/your/friends/and/family/Recreational" + id)
+    return axios.get("/api/planit/travel/is/fun/with/your/friends/and/family/Recreational/" + id)
 },
 
 postRec: function(RecData){
@@ -65,7 +65,7 @@ postRec: function(RecData){
 },
 
 getUser: function(id){
-    return axios.get("/api/planit/travel/is/fun/with/your/friends/and/family/enjoy/User" + id)
+    return axios.get("/api/planit/travel/is/fun/with/your/friends/and/family/enjoy/User/" + id)
 },
 
 postUser: function(UserData){

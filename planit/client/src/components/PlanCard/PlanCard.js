@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import styled from 'styled-components';
 import placeholder from '../../img/placeholder_200x200.png';
+import API from '../../utils/api';
 
 const PlanCardDiv = styled.div`
     float: left;
@@ -36,22 +37,35 @@ class PlanCard extends Component {
 
     state = {
         plans: [],
-        clickedPlan: null
+        clickedPlan: null,
+        currentUser: this.props.currentUser
     }
 
     componentDidMount = () => {
         // this.getUserPlans();
     }
 
-    // getUserPlans = () => {
-    //     //API call to get all plans associated with logged in user
-    //     //set these to state.....somehow and render them on the page for each element found
-    //     API.getAllUserPlans()
-    //     .then(plans => this.setState({
-    //         plans: plans
-    //     }))
-    //     .catch(err => console.log(err))
-    // }
+<<<<<<< HEAD
+    getUserPlans = () => {
+        //API call to get all plans associated with logged in user
+        //set these to state.....somehow and render them on the page for each element found
+        API.getAllUserPlans(this.state.currentUser)
+        .then(plans => this.setState({
+            plans: plans
+        }))
+        .catch(err => console.log(err))
+=======
+
+    getUserPlans = () => {
+        //API call to get all plans associated with logged in user
+        //set these to state.....somehow and render them on the page for each element found
+        // API.getAllUserPlans()
+        // .then(plans => this.setState({
+        //     plans: plans
+        // }))
+        // .catch(err => console.log(err))
+>>>>>>> 16a92d4c38c8e0bed29bf0753d6bdb85498d42a1
+    }
 
     loadPlan = id => {
         // const planID = id
