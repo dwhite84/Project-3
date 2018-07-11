@@ -84,7 +84,7 @@ class App extends Component {
             }
           <Switch>
             <Route exact path='/' component={HomePage}/> 
-            <Route exact path='/planit' component={Dashboard}/>
+            <Route exact path='/dashboard' component={Dashboard}/>
             <Route exact path='/planit/:id' component={PlanPage} />
             <Route path="/login" render={() =>
             <LoginForm

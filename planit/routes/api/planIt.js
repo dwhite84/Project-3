@@ -118,11 +118,11 @@ const User = require("../../controllers/planitControllersUser");
 
 
 
-router.route("/")
-    .get(PlanIt.findAllByPlanItId)
-    .put(PlanIt.update)
-    .post(PlanIt.create)
-    .delete(PlanIt.remove);
+// router.route("/")
+//     .get(PlanIt.findAllByPlanItId)
+//     .put(PlanIt.update)
+//     .post(PlanIt.create)
+//     .delete(PlanIt.remove);
 
 router.route("/:id")
     .get(PlanIt.findOneByPlanId)

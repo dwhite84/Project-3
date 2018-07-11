@@ -5,6 +5,7 @@ module.exports = {
 
     findOneByPlanId: function(req,res){
         db.PlanIt
+            .findById(req.params.id)
             .then(req.query)
             .sort({_:id})
             .then(dbPlanit => res.json(dbPlanit))
