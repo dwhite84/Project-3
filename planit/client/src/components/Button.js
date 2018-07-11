@@ -12,7 +12,7 @@ const Button = styled.button`
     font-family: 'Work Sans', sans-serif;
     color: #2b6aaf;
 
-    :hover {
+    &:hover {
         color: #ffffff;
         background-color: #2b6aaf;
     } 

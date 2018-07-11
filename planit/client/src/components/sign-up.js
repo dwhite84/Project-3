@@ -1,10 +1,34 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
+import Button from './Button';
+
+const FormButton = Button.extend`
+	width: 100%;
+	margin-top: .5em;
+`;
+
+const Input = styled.input`
+	padding: .5em;
+	color: black;
+	background: #ffffff;
+	border: none;
+	border-radius: 4px;
+	width: 95%;
+	margin-top: .5em;
+	margin-bottom: .5em;
+	margin-left: auto;
+	margin-right: auto;
+	font-family: 'Roboto', sans-serif;
+
+	&:hover {
+		border: 1px solid #2b6aaf;
+	}
+`;
 
 const PageDiv = styled.div`
 	width: 100%;
-	height: 600px;
+	height: 605px;
 `;
 
 const Header = styled.h4`
@@ -41,7 +65,7 @@ class Signup extends Component {
 		})
 	}
 	handleSubmit(event) {
-		console.log('sign-up handleSubmit, username: ')
+		console.log('sign-up handleSubmit, username: ');
 		console.log(this.state.username)
 		event.preventDefault()
 
@@ -74,59 +98,65 @@ render() {
 		<PageDiv className="SignupForm">
 			<Header>Sign up</Header>
 			<FormDiv>
-			<form className="form-horizontal">
-			<div className="form-group">
-					<div className="col-1 col-ml-auto">
+			<form>
+				<div>
+					{/* <div>
 						<label className="form-label" htmlFor="email">Email</label>
-					</div>
-					<div className="col-3 col-mr-auto">
-						<input className="form-input"
+					</div> */}
+					<div>
+						<Input
 							type="text"
 							id="email"
 							name="email"
 							placeholder="Email"
 							value={this.state.email}
 							onChange={this.handleChange}
+							// innerRef={x => { this.input = x }}
+							// onMouseEnter={() => this.input.focus()}
 						/>
 					</div>
 				</div>
-				<div className="form-group">
-					<div className="col-1 col-ml-auto">
+				<div>
+					{/* <div>
 						<label className="form-label" htmlFor="username">Username</label>
-					</div>
-					<div className="col-3 col-mr-auto">
-						<input className="form-input"
+					</div> */}
+					<div>
+						<Input
 							type="text"
 							id="username"
 							name="username"
 							placeholder="Username"
 							value={this.state.username}
 							onChange={this.handleChange}
+							// innerRef={x => { this.input = x }}
+							// onMouseEnter={() => this.input.focus()}
 						/>
 					</div>
 				</div>
 
-				<div className="form-group">
-					<div className="col-1 col-ml-auto">
+				<div>
+					{/* <div>
 						<label className="form-label" htmlFor="password">Password: </label>
-					</div>
-					<div className="col-3 col-mr-auto">
-						<input className="form-input"
-							placeholder="password"
+					</div> */}
+					<div>
+						<Input
+							placeholder="Password"
 							type="password"
 							name="password"
 							value={this.state.password}
 							onChange={this.handleChange}
+							// innerRef={x => { this.input = x }}
+							// onMouseEnter={() => this.input.focus()}
 						/>
 					</div>
 				</div>
-				<div className="form-group ">
-					<div className="col-7"></div>
-					<button
-						className="btn btn-primary col-1 col-mr-auto"
+				<div>
+					<div></div>
+					<FormButton
 						onClick={this.handleSubmit}
 						type="submit"
-					>Sign up</button>
+					>Sign up
+					</FormButton>
 				</div>
 			</form>
 			</FormDiv>

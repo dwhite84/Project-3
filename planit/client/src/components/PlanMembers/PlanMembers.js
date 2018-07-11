@@ -1,3 +1,8 @@
+//At the very least, we need this component to display the members who are assigned to a plan and the button to add new users to the plan. Stretch:
+    //allow these users to be clickable, which would show the user information.
+//make axios call to the associated Planit and grab the list of members
+    //should be a get call that maps through and prints the list of members
+
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import memberImg from '../../img/50x50.png';
@@ -12,7 +17,14 @@ const MemImg = styled.img`
     margin-bottom: .5em;
 `;
 
+let members = [];
+
 const PlanMembers = () => {
+
+    const grabMembers = () => {
+        //axios (GET) call, store in array members
+        
+    }
 
     return (
         <Fragment>

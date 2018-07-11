@@ -1,11 +1,11 @@
 module.exports = {
-    Admin: require('./planitControllerAdmin'),
-    ExpendableGoods: require('./planitControllerExpendableGoods'),
-    MessageBoard: require('./planitControllerMessageBoard'),
+    Admin: require('./planitContollersAdmin'),
+    ExpendableGoods: require('./planitControllersExpendableGoods'),
+    MessageBoard: require('./planitControllersMessageBoard'),
     Other: require('./planitControllerOther'),
-    Recreational: require('./planitControllerRecreational'),
-    Gear: require('./planitControllerGear'),
-    Logistics: require('./planitControllerLogistics'),
-    User: require('./planitControllerUser'),
-
+    Recreational: require('./planitControllersRecreational'),
+    Gear: require('./planitControllersGear'),
+    Logistics: require('./planitControllersLogistics'),
+    User: require('./planitControllersUser'),
+    PlanIt: require('./planitControllersPlanIt')
 }

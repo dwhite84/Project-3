@@ -17,7 +17,7 @@ const Nav = styled.ul`
 
 const NavbarLogo = styled.li`
     float: left;
-    margin-left: 1.2em;
+    margin-left: 1.4em;
     margin-top: .75em;
     margin-bottom: .5em;
 `;
@@ -34,6 +34,20 @@ const NavbarButton = styled.li`
 const LinkItem = styled.a`
     color: #2b6aaf;
     text-decoration: none;
+
+    &:hover {
+        color: #ffffff;
+    }
+`;
+
+const LinkItem2 = styled.a`
+    color: #2b6aaf;
+    text-decoration: none;
+    margin-right:1em;
+
+    &:hover {
+        color: teal;
+    }
 `;
 
 
@@ -44,10 +58,10 @@ class NavBar extends Component {
     }
 
     logout(event) {
-        event.preventDefault()
-        console.log('logging out')
+        event.preventDefault();
+        console.log('logging out');
         axios.post('/user/logout').then(response => {
-          console.log(response.data)
+          console.log(response.data);
           if (response.status === 200) {
             this.props.updateUser({
               loggedIn: false,
@@ -55,13 +69,13 @@ class NavBar extends Component {
             })
           }
         }).catch(error => {
-            console.log('Logout error')
+            console.log('Logout error');
         })
       }
 
    render () {
     const loggedIn = this.props.loggedIn;
-    console.log('navbar render, props: ')
+    console.log('navbar render, props: ');
     console.log(this.props);
     return (
             <header>
@@ -83,21 +97,21 @@ class NavBar extends Component {
                             <NavbarButton>
                                 <Button>
                                     <LinkItem href=""  onClick={this.logout}>
-                                    <span className="text-secondary">logout</span></LinkItem>
+                                    <span>logout</span></LinkItem>
                                 </Button>
 
                             </NavbarButton>
                         ) : (
-                                <NavbarButton className="navbar-section">
+                                <NavbarButton>
                                     
-                                    <LinkItem href="/signup" className="btn">
-                                        <span className="text-secondary">Signup </span>
-                                    </LinkItem>
+                                    <LinkItem2 href="/dashboard">
+                                        <span>Home </span>
+                                    </LinkItem2>
                                     
 
                                     <Button>
-                                        <LinkItem href="/login" className="btn btn-link">
-                                            <span className="text-secondary">Login </span>
+                                        <LinkItem href="/login">
+                                            <span>Login </span>
                                         </LinkItem>
                                     </Button>
                                 </NavbarButton>
