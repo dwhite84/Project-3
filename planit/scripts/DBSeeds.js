@@ -26,7 +26,6 @@ db.ExpendableGoods
   .then(() => db.ExpendableGoods.collection.insertMany(ExpendableGoodsSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
-    process.exit(0);
   })
   .catch(err => {
     console.error(err);
@@ -55,7 +54,6 @@ db.Gear
   .then(() => db.Gear.collection.insertMany(GearSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
-    process.exit(0);
   })
   .catch(err => {
     console.error(err);
@@ -80,7 +78,6 @@ db.Logistics
   .then(() => db.Logistics.collection.insertMany(LogisticsSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
-    process.exit(0);
   })
   .catch(err => {
     console.error(err);
@@ -101,7 +98,6 @@ db.MessageBoard
   .then(() => db.MessageBoard.collection.insertMany(MessageBoardSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
-    process.exit(0);
   })
   .catch(err => {
     console.error(err);
@@ -132,7 +128,6 @@ db.Other
   .then(() => db.Other.collection.insertMany(OtherSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
-    process.exit(0);
   })
   .catch(err => {
     console.error(err);
@@ -159,7 +154,6 @@ db.PlanIt
   .then(() => db.PlanIt.collection.insertMany(PlanItSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
-    process.exit(0);
   })
   .catch(err => {
     console.error(err);
@@ -190,7 +184,6 @@ db.Recreational
   .then(() => db.Recreational.collection.insertMany(RecreationalSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
-    process.exit(0);
   })
   .catch(err => {
     console.error(err);
