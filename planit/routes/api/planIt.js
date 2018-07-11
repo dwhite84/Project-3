@@ -119,18 +119,18 @@ const User = require("../../controllers/planitControllersUser");
 
 
 router.route("/")
-    .get(PlanIt.findAllByUserId)
+    .get(PlanIt.findAllByPlanItId)
     .put(PlanIt.update)
     .post(PlanIt.create)
     .delete(PlanIt.remove);
 
 router.route("/:id")
-    .get(PlanIt.findAllByUserId)
+    .get(PlanIt.findOneByPlanId)
     .put(PlanIt.update)
     .post(PlanIt.create)
     .delete(PlanIt.remove);
 
-router.route("/user/")
+router.route("/user")
     .post(User.create)
 
 //Route allows you to find only by plan ID
@@ -146,48 +146,48 @@ router.route("/plan/:planid")
     .put(PlanIt.update)   
     .delete(PlanIt.remove);
 
-router.route("/plan/")
+router.route("/plan")
     .post(PlanIt.create)
 
-router.route("/Admin/")
-    .get(Admin.findAll)
-    .put(Admin.update)
-    .post(Admin.create)
-    .delete(Admin.remove);
+// router.route("/Admin/")
+//     .get(Admin.findAllByUserId)
+//     .put(Admin.update)
+//     .post(Admin.create)
+//     .delete(Admin.remove);
 
-router.route("/ExpendableGoods/")
+router.route("/travel/is/fun/ExpendableGoods")
     .get(ExpendableGoods.findAllByUserId)
     .post(ExpendableGoods.create)
     .put(ExpendableGoods.update);
 
-router.route("/Gear/")
+router.route("/travel/is/fun/with/Gear")
     .get(Gear.findAllByUserId)
     .post(Gear.create)
     .put(Gear.update);
 
 
-router.route("/Logistics/")
+router.route("/travel/is/fun/with/your/Logistics")
     .get(Logistics.findAllByUserId)
     .post(Logistics.create)
     .put(Logistics.update);
 
-router.route("/MessageBoard/")
+router.route("/travel/is/fun/with/your/friends/MessageBoard")
     .get(MessageBoard.findAllByUserId)
     .post(MessageBoard.create)
     .put(MessageBoard.update);
 
-router.route("/Other/")
+router.route("/travel/is/fun/with/your/friends/and/Other")
     .get(Other.findAllByUserId)
     .post(Other.create)
     .put(Other.update);
 
-router.route("/Recreational/")
+router.route("/travel/is/fun/with/your/friends/and/family/Recreational")
     .get(Recreational.findAllByUserId)
     .post(Recreational.create)
     .put(Recreational.update);
 
-router.route("/User/")
-    .get(User.findAll)
+router.route("/travel/is/fun/with/your/friends/and/family/enjoy/User")
+    .get(User.findAllByUserId)
     .post(User.create)
     .put(User.update);
 
